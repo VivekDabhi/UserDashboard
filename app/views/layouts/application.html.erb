@@ -11,6 +11,20 @@
   </head>
 
   <body>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+    <% if user_signed_in? %>
+      <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-danger btn-sm'  do %>
+        <i class="fas fa-power-off"></i> Logout
+      <% end %>
+    <% end %>
+    <% if !user_signed_in? %>
+
+    <% end %>
     <%= yield %>
   </body>
 </html>
