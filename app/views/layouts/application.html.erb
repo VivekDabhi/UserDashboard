@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Userdashboard</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>User Dashboard</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
-    <% if user_signed_in? %>
-      <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-danger btn-sm'  do %>
-        <i class="fas fa-power-off"></i> Logout
-      <% end %>
-    <% end %>
-    <% if !user_signed_in? %>
-
-    <% end %>
-    <%= yield %>
+    <%= render 'layouts/messages'%>
+    <div class="container-fluid">
+      <div class="row">
+        <% if user_signed_in? %>
+          <%= render 'layouts/user_sidebar'%>
+        <% end %>
+        <% unless user_signed_in? %>
+        <% end %>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <%= yield %>
+        </main>
+      </div>
+    </div>
   </body>
 </html>
