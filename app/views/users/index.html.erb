@@ -1,0 +1,24 @@
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th><%= 'User Email' %></th>
+      <% if admin? %>
+        <th><%= 'Action' %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <% if admin? %>
+          <td>
+            <%= link_to users_path, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <i class="fas fa-trash-alt" title='Delete'></i>
+            <% end %> 
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
