@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+Author.first_or_create([{name: 'Michale'}, {name: 'Preet'}])
+Book.first_or_create([{name: 'Ikigai', description: 'Test123', publish_at: DateTime.now, author_id: 1}])
