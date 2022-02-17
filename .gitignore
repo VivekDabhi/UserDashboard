@@ -12,6 +12,13 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+.ruby-version
+.ruby-gemset
+.byebug_history
+/config/database.yml
+/public/system/*
+/public/assets/*
+/public/downloads/*
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
