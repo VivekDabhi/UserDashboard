@@ -1,24 +1,48 @@
-# README
+# ScrabbleClub
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Requirements:
 
-Things you may want to cover:
+- Ruby version: 3.0.2
+- Rails version: 7.0.2
+- Database: PostgreSQL
 
-* Ruby version
+## Follow below steps to setup your development environment:
 
-* System dependencies
+1. clone the repository:
 
-* Configuration
+        git clone https://github.com/VivekDabhi/UserDashboard.git
 
-* Database creation
+2. Install dependencies:
 
-* Database initialization
+    If your system doesn't have above ruby version. please install first. you can check ruby version using `ruby -v`.
 
-* How to run the test suite
+    After installing specified ruby version, follow the below steps:
 
-* Services (job queues, cache servers, search engines, etc.)
+    Install the gems/library:
 
-* Deployment instructions
+        bundle install
+    Install the yarn packages:
 
-* ...
+        yarn install
+
+3. Configure database.yml. It's located on `config/database.yml`
+
+        Use your username and password of postgreSQL database.
+
+4. Create Database
+
+        rails db:create
+
+5. Migrate table to Database
+
+        rails db:migrate
+
+6. Seed the data(this will create some data for application):
+
+        rails db:seed
+
+7. Let's go now. start the server.
+
+        rails s
+
+### Thank You
